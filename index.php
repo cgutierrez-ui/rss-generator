@@ -10,6 +10,11 @@ if (!extension_loaded('curl')) {
     exit("RSS-Bridge requires curl (apt install php-curl)\n");
 }
 
+if (empty($_GET['action'])) {
+    require __DIR__ . '/instagram-rss.php';
+    exit;
+}
+
 require __DIR__ . '/lib/bootstrap.php';
 require __DIR__ . '/lib/config.php';
 
@@ -24,7 +29,7 @@ set_exception_handler(function (\Throwable $e) use ($logger) {
 });
 
 set_error_handler(function ($code, $message, $file, $line) use ($logger) {
-    // Consider: ini_set('error_reporting', E_ALL & ~E_DEPRECATED);
+    ini_set('error_reporting', E_ALL & ~E_DEPRECATED);
     if ((error_reporting() & $code) === 0) {
         // Deprecation messages and other masked errors are typically ignored here
         return false;
@@ -42,6 +47,7 @@ set_error_handler(function ($code, $message, $file, $line) use ($logger) {
     $logger->warning($text);
     // todo: return false to prevent default error handler from running?
 });
+
 
 // There might be some fatal errors which are not caught by set_error_handler() or \Throwable.
 register_shutdown_function(function () use ($logger) {
