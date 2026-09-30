@@ -10,6 +10,8 @@ if (!extension_loaded('curl')) {
     exit("RSS-Bridge requires curl (apt install php-curl)\n");
 }
 
+// Set Instagram generator as front page
+
 if (empty($_GET['action'])) {
     require __DIR__ . '/instagram-rss.php';
     exit;
