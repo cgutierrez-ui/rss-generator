@@ -5,4 +5,5 @@ This project utilizes RSS-Bridge to generate RSS feeds and custom URLs from Inst
 ## RSS-Bridge
 
 [Full documentation](https://rss-bridge.github.io/rss-bridge/index.html)
+
 Requires minimum PHP 7.4.
