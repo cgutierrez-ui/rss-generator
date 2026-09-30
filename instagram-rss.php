@@ -57,7 +57,7 @@ if (($_GET['format'] ?? '') === 'text') {
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Instagram to RSS URL Converter</title>
+		<title>Instagram to RSS URL Generator</title>
 		<style>
 			  body { font-family: system-ui, -apple-system, sans-serif; max-width: 640px; margin: 3rem auto; padding: 0 1rem; color: #1a1a1a; }
 			  h1 { font-size: 1.4rem; }
@@ -71,7 +71,7 @@ if (($_GET['format'] ?? '') === 'text') {
 		</style>
 	</head>
 	<body>
-	  <h1>Instagram to RSS Feed URL Converter</h1>
+	  <h1>Instagram to RSS Feed URL Generator</h1>
 	  <p class="hint">Enter any Instagram username to get its RSS-Bridge feed URL</p>
 	 
 	  <form method="get">
